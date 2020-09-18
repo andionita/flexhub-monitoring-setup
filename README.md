@@ -9,12 +9,16 @@ docker-compose -p monitoring up -d
 docker-compose -p exporters -f exporters.yml up -d
 ```
 
-The dashboards can then be found at http://localhost:3000/dashboards
+Prometheus can be accessed at http://localhost:9090/
+
+The Grafana dashboards can then be found at http://localhost:3000/dashboards
 
 ## Node Eth - Ethereum-based metrics
 
-|||
-|-----|-----|
+Contains the following panels:
+
+| <!-- --> | <!-- --> |
+|----------|----------|
 | Blocks per Minute | number of blocks per 1 minute |
 | Net Peers	| number of peers currently connected to the client |
 | Block Number | block number at a certain point in time |
@@ -23,4 +27,5 @@ The dashboards can then be found at http://localhost:3000/dashboards
 
 ## Node Server - Server metrics
 
-Various server metrics (CPU, RAM, disk space, etc.)
+Various server metrics panel (CPU, RAM, disk space, etc.)
+
