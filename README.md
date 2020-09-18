@@ -17,8 +17,8 @@ The Grafana dashboards can then be found at http://localhost:3000/dashboards
 
 Contains the following panels:
 
-| <!-- --> | <!-- --> |
-|----------|----------|
+| Name    | Description |
+|---------|-------------|
 | Blocks per Minute | number of blocks per 1 minute |
 | Net Peers	| number of peers currently connected to the client |
 | Block Number | block number at a certain point in time |
