@@ -4,7 +4,10 @@ services:
 
   parity-exporter:
     image: 31z4/ethereum-prometheus-exporter
-    command:  -url http://parity:8545/
+    # connect to node_1
+    command:  -url http://172.13.0.2:22000/
+    #command:  -url http://node_1:22000/
+    container_name: flexhub_parity-exporter
     restart: always
 
   node-exporter:
@@ -18,10 +21,11 @@ services:
       - '--path.sysfs=/host/sys'
       - --collector.filesystem.ignored-mount-points
       - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    container_name: flexhub_node-exporter
     restart: always
 
 # For local testing
 networks:
   default:
     external:
-      name: monitoring_bloxberg
+      name: quorum_net

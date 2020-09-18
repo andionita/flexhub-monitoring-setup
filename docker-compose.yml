@@ -17,9 +17,8 @@ services:
       - '--web.console.templates=/usr/share/prometheus/consoles'
     ports:
       - 9090:9090
+    container_name: flexhub_prometheus
     restart: always
-    networks:
-      - bloxberg
 
   grafana:
     image: grafana/grafana:6.6.2
@@ -32,10 +31,10 @@ services:
       - ./grafana/provisioning/:/etc/grafana/provisioning/
     env_file:
       - ./grafana/config.monitoring
+    container_name: flexhub_grafana
     restart: always
-    networks:
-      - bloxberg
 
-# For local testing
 networks:
-  bloxberg:
+  default:
+    external:
+      name: quorum_net

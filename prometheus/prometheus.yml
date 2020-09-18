@@ -7,7 +7,7 @@ global:
   # Attach these labels to any time series or alerts when communicating with
   # external systems (federation, remote storage, Alertmanager).
   external_labels:
-      monitor: 'bloxberg'
+      monitor: 'flexhub'
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
@@ -27,7 +27,7 @@ scrape_configs:
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
 
-    # Replace 'node-exporter' with the URL of the monitored bloxberg node
+    # Replace 'node-exporter' with the URL of the monitored node
     static_configs:
       - targets: ['node-exporter:9100']
 
@@ -36,6 +36,6 @@ scrape_configs:
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 1s
 
-    # Replace 'parity-exporter' with the URL of the monitored bloxberg node
+    # Replace 'parity-exporter' with the URL of the monitored node
     static_configs:
       - targets: ['parity-exporter:9368']

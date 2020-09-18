@@ -68,7 +68,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Ethereum Block Number",
+      "title": "Block Number",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -146,7 +146,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(eth_block_number[10m])",
+          "expr": "rate(eth_block_number[1m])",
           "refId": "A"
         }
       ],
@@ -240,7 +240,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Ethereum Latest Block Transactions",
+      "title": "Latest Block Transactions",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -292,7 +292,7 @@
         "y": 8
       },
       "hiddenSeries": false,
-      "id": 15,
+      "id": 20,
       "legend": {
         "avg": false,
         "current": false,
@@ -310,7 +310,7 @@
       },
       "percentage": false,
       "pointradius": 2,
-      "points": true,
+      "points": false,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -318,7 +318,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "eth_gas_price / 1000000000",
+          "expr": "eth_pending_block_transactions",
           "refId": "A"
         }
       ],
@@ -326,7 +326,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Gas Price (in gwei)",
+      "title": "Pending Block Transactions",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -343,7 +343,7 @@
       "yaxes": [
         {
           "format": "short",
-          "label": "gwei",
+          "label": null,
           "logBase": 1,
           "max": null,
           "min": null,
@@ -409,7 +409,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "parity_net_active_peers",
+          "expr": "net_peers",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -420,101 +420,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Active Peers",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "Prometheus",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 16
-      },
-      "hiddenSeries": false,
-      "id": 2,
-      "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "hideEmpty": false,
-        "hideZero": false,
-        "max": true,
-        "min": true,
-        "rightSide": false,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 5,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "parity_net_connected_peers",
-          "format": "time_series",
-          "intervalFactor": 1,
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Connected Peers",
+      "title": "Net Peers",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -589,7 +495,7 @@
     ]
   },
   "timezone": "",
-  "title": "Parity",
+  "title": "Node Eth",
   "uid": "parity",
   "version": 6
 }
