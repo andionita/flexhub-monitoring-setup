@@ -9,10 +9,12 @@ docker-compose -p monitoring up -d
 docker-compose -p exporters -f exporters.yml up -d
 ```
 
-The dashboards can be found at http://localhost:3000/dashboards
+The dashboards can then be found at http://localhost:3000/dashboards
 
 ## Node Eth - Ethereum-based metrics
 
+|||
+|-----|-----|
 | Blocks per Minute | number of blocks per 1 minute |
 | Net Peers	| number of peers currently connected to the client |
 | Block Number | block number at a certain point in time |
